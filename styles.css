@@ -1,0 +1,573 @@
+:root {
+  --primary-color: #1b97b3;
+  --secondary-color: #593532;
+  --third-color: #593532;
+  --background: antiquewhite;
+}
+
+[data-theme="dark"] {
+  --primary-color: #1b97b3;
+  --secondary-color: #fff;
+  --third-color: black;
+  --background: #141b1f;
+}
+
+body {
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  border: none;
+  height: 100vh;
+  width: 100vw;
+  max-height: 100vh;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Baloo Paaji 2", cursive;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--background);
+}
+
+svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: 100vh;
+  max-height: 100vh;
+  pointer-events: none;
+}
+
+.headers {
+  position: absolute;
+  top: 15vh;
+  left: 7%;
+  max-width: 500px;
+  /* 500px */
+}
+
+.headers h1 {
+  margin: 0;
+  margin-top: 0;
+  padding: 0;
+  letter-spacing: -0.05em;
+  color: var(--primary-color);
+  font-size: 2.5rem;
+  font-size: calc(min(12vh, 13vw));
+  font-weight: 800;
+  line-height: 0.9;
+}
+
+.headers p {
+  letter-spacing: -0.03em;
+  color: var(--secondary-color);
+  line-height: 1.5em;
+  font-weight: 600;
+  margin: 0;
+  margin-top: 3.5vh;
+  margin-bottom: 3.5vh;
+  font-size: calc(min(5vh, 3vw, 1.5rem));
+  /* 1.5rem */
+}
+
+/* botoes */
+#buttons-container {
+  width: 50%;
+  text-align: left;
+  position: absolute;
+  bottom: 15vh;
+  left: 7%;
+  margin-top: 1vh;
+}
+
+#buttons-container .email-btn {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  outline: none;
+  border: 0;
+  vertical-align: middle;
+  text-decoration: none;
+  font-size: inherit;
+  font-family: "Baloo Paaji 2", cursive;
+}
+
+#buttons-container .email-btn.email-btn {
+  font-weight: 600;
+  color: #fff;
+  padding: 8px 25px;
+  font-size: 1.4rem;
+  color: white;
+  background: #17a0bf;
+  border-radius: 0.75em;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-transition: background 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1);
+  transition: background 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1);
+  transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), background 150ms cubic-bezier(0, 0, 0.58, 1);
+  transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), background 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1);
+}
+
+#buttons-container .email-btn.email-btn::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: -webkit-gradient(linear, right top, left top, from(#1793af), color-stop(8%, #186475), color-stop(92%, #1a8299), to(#127c94));
+  background: linear-gradient(to left, #1793af 0%, #186475 8%, #1a8299 92%, #127c94 100%);
+  border-radius: inherit;
+  -webkit-transform: translate3d(0, 0.35em, -1em);
+          transform: translate3d(0, 0.35em, -1em);
+  -webkit-transition: -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-box-shadow 150ms cubic-bezier(0, 0, 0.58, 1);
+  transition: -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-box-shadow 150ms cubic-bezier(0, 0, 0.58, 1);
+  transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), box-shadow 150ms cubic-bezier(0, 0, 0.58, 1);
+  transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), box-shadow 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-box-shadow 150ms cubic-bezier(0, 0, 0.58, 1);
+}
+
+#buttons-container .email-btn.email-btn:hover {
+  background: var(--primary-color);
+  -webkit-transform: translate(0, 0.25em);
+          transform: translate(0, 0.25em);
+}
+
+#buttons-container .email-btn.email-btn:hover::before {
+  -webkit-transform: translate3d(0, 0.2em, -1em);
+          transform: translate3d(0, 0.2em, -1em);
+}
+
+#buttons-container .email-btn.email-btn:active {
+  background: var(--primary-color);
+  -webkit-transform: translate(0, 0.35em);
+          transform: translate(0, 0.35em);
+}
+
+#buttons-container .email-btn.email-btn:active::before {
+  -webkit-transform: translate3d(0, 0.1em, -1em);
+          transform: translate3d(0, 0.1em, -1em);
+}
+
+#buttons-container .resume-btn {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  outline: none;
+  border: 0;
+  vertical-align: middle;
+  text-decoration: none;
+  font-size: inherit;
+  font-family: "Baloo Paaji 2", cursive;
+}
+
+#buttons-container .resume-btn.resume-btn {
+  font-weight: 600;
+  color: var(--third-color);
+  padding: 8px 25px;
+  font-size: 1.4rem;
+  background: #fff;
+  border-radius: 0.75em;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-transition: background 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1);
+  transition: background 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1);
+  transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), background 150ms cubic-bezier(0, 0, 0.58, 1);
+  transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), background 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1);
+}
+
+#buttons-container .resume-btn.resume-btn::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: -webkit-gradient(linear, right top, left top, from(#c5c5c5), color-stop(8%, #cecece), color-stop(92%, #dadada), to(#eeeeee));
+  background: linear-gradient(to left, #c5c5c5 0%, #cecece 8%, #dadada 92%, #eeeeee 100%);
+  border-radius: inherit;
+  -webkit-transform: translate3d(0, 0.35em, -1em);
+          transform: translate3d(0, 0.35em, -1em);
+  -webkit-transition: -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-box-shadow 150ms cubic-bezier(0, 0, 0.58, 1);
+  transition: -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-box-shadow 150ms cubic-bezier(0, 0, 0.58, 1);
+  transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), box-shadow 150ms cubic-bezier(0, 0, 0.58, 1);
+  transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), box-shadow 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-box-shadow 150ms cubic-bezier(0, 0, 0.58, 1);
+}
+
+#buttons-container .resume-btn.resume-btn:hover {
+  background: #fff;
+  color: var(--third-color);
+  -webkit-transform: translate(0, 0.25em);
+          transform: translate(0, 0.25em);
+}
+
+#buttons-container .resume-btn.resume-btn:hover::before {
+  -webkit-transform: translate3d(0, 0.2em, -1em);
+          transform: translate3d(0, 0.2em, -1em);
+}
+
+#buttons-container .resume-btn.resume-btn:active {
+  background: #fff;
+  color: var(--secondary-color);
+  -webkit-transform: translate(0, 0.35em);
+          transform: translate(0, 0.35em);
+}
+
+#buttons-container .resume-btn.resume-btn:active::before {
+  -webkit-transform: translate3d(0, 0.1em, -1em);
+          transform: translate3d(0, 0.1em, -1em);
+}
+
+#buttons-container .active {
+  -webkit-transform: translate(0, 0.35em) !important;
+          transform: translate(0, 0.35em) !important;
+}
+
+#buttons-container .active::before {
+  -webkit-transform: translate3d(0, 0.1em, -1em) !important;
+          transform: translate3d(0, 0.1em, -1em) !important;
+}
+
+.base {
+  display: none;
+  opacity: 0;
+  z-index: 90;
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  background-color: #ffffff;
+  width: 50px;
+  height: 50px;
+  -webkit-transition: all 1s cubic-bezier(0.5, -0.75, 0.05, 1);
+  transition: all 1s cubic-bezier(0.5, -0.75, 0.05, 1);
+  border-bottom-left-radius: 100%;
+}
+
+.base .menu {
+  z-index: 100;
+  background-color: #ffffff;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  width: 52px;
+  height: 52px;
+  border-bottom-left-radius: 200px;
+  cursor: pointer;
+  -webkit-transition: all 1s cubic-bezier(0.5, -0.75, 0.05, 1), background-color 1s ease;
+  transition: all 1s cubic-bezier(0.5, -0.75, 0.05, 1), background-color 1s ease;
+}
+
+.base .menu .hamburger {
+  position: absolute;
+  position: absolute;
+  width: 22px;
+  height: 20px;
+  top: 50%;
+  left: 80%;
+  -webkit-transform: translate(-100%, -100%);
+          transform: translate(-100%, -100%);
+}
+
+.base .menu .hamburger:before, .base .menu .hamburger:after {
+  content: "";
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+  -webkit-transition: top 0.5s ease 0.5s, background-color 0.75s ease 0.25s, -webkit-transform 0.5s ease;
+  transition: top 0.5s ease 0.5s, background-color 0.75s ease 0.25s, -webkit-transform 0.5s ease;
+  transition: top 0.5s ease 0.5s, transform 0.5s ease, background-color 0.75s ease 0.25s;
+  transition: top 0.5s ease 0.5s, transform 0.5s ease, background-color 0.75s ease 0.25s, -webkit-transform 0.5s ease;
+}
+
+.base .menu .hamburger .xmark, .base .menu .hamburger:before, .base .menu .hamburger:after {
+  position: absolute;
+  height: 5px;
+  left: 0px;
+  right: 0px;
+  border-radius: 5px;
+  background-color: var(--third-color);
+}
+
+.base .menu .hamburger .xmark {
+  -webkit-transition: opacity 0s linear 0.5s, background-color 0.75s ease 0.25s;
+  transition: opacity 0s linear 0.5s, background-color 0.75s ease 0.25s;
+  opacity: 1;
+  top: 10px;
+}
+
+.base .menu .hamburger:before {
+  top: 0px;
+}
+
+.base .menu .hamburger:after {
+  top: initial;
+  top: 20px;
+}
+
+.base .icons {
+  z-index: 98;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+}
+
+.base .icons > * {
+  position: absolute;
+  font-size: 0px;
+  color: #fff;
+}
+
+.base .section-static {
+  background-color: #fff;
+  z-index: 94;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  -webkit-transform-origin: top right;
+          transform-origin: top right;
+  -webkit-transition: width 1s cubic-bezier(0.5, -0.75, 0.05, 1), height 1s cubic-bezier(0.5, -0.75, 0.05, 1);
+  transition: width 1s cubic-bezier(0.5, -0.75, 0.05, 1), height 1s cubic-bezier(0.5, -0.75, 0.05, 1);
+}
+
+.base .section-static:hover {
+  -webkit-filter: brightness(95%);
+          filter: brightness(95%);
+}
+
+.base .section-static.top {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  border-bottom-left-radius: 400px;
+}
+
+.base .section-static.bottom {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  border-bottom-left-radius: 400px;
+}
+
+.base.open {
+  width: 125px;
+  height: 125px;
+  -webkit-transition: all 1.25s cubic-bezier(0.5, 0, 0.05, 1.75);
+  transition: all 1.25s cubic-bezier(0.5, 0, 0.05, 1.75);
+}
+
+.base.open .menu {
+  width: 52px;
+  height: 52px;
+  -webkit-transition: all 1s cubic-bezier(0.5, 0, 0.05, 1.75), background-color 1s ease;
+  transition: all 1s cubic-bezier(0.5, 0, 0.05, 1.75), background-color 1s ease;
+  background-color: var(--background);
+}
+
+.base.open .menu .hamburger .xmark, .base.open .menu .hamburger:before, .base.open .menu .hamburger:after {
+  background-color: var(--secondary-color);
+}
+
+.base.open .menu .hamburger .xmark {
+  opacity: 0;
+}
+
+.base.open .menu .hamburger:before, .base.open .menu .hamburger:after {
+  -webkit-transition: top 0.5s linear, background-color 0.75s ease 0.25s, -webkit-transform 0.5s ease 0.5s;
+  transition: top 0.5s linear, background-color 0.75s ease 0.25s, -webkit-transform 0.5s ease 0.5s;
+  transition: top 0.5s linear, transform 0.5s ease 0.5s, background-color 0.75s ease 0.25s;
+  transition: top 0.5s linear, transform 0.5s ease 0.5s, background-color 0.75s ease 0.25s, -webkit-transform 0.5s ease 0.5s;
+}
+
+.base.open .menu .hamburger:before {
+  top: 10px;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+.base.open .menu .hamburger:after {
+  top: 10px;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.base.open .icons {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+}
+
+.base.open .icons > * {
+  position: absolute;
+  font-size: 35px;
+  color: var(--third-color);
+  -webkit-transition: 0.5s cubic-bezier(0.5, 0, 0.05, 1.75) 0.3s;
+  transition: 0.5s cubic-bezier(0.5, 0, 0.05, 1.75) 0.3s;
+  pointer-events: none;
+}
+
+.base.open .icons .fa-lightbulb {
+  top: 10px;
+  right: 65px;
+}
+
+.base.open .icons .fa-volume-high,
+.base.open .icons .fa-volume-xmark {
+  top: 65px;
+  right: 10px;
+}
+
+.base.open .section-static {
+  cursor: pointer;
+  width: 125px;
+  height: 125px;
+  -webkit-transition: width 1.25s cubic-bezier(0.5, 0, 0.05, 2), height 1.25s cubic-bezier(0.5, 0, 0.05, 2);
+  transition: width 1.25s cubic-bezier(0.5, 0, 0.05, 2), height 1.25s cubic-bezier(0.5, 0, 0.05, 2);
+}
+
+/*  medium-sized devices */
+@media all and (min-width: 965px) and (max-width: 1150px) {
+  #buttons-container {
+    text-align: center;
+    position: absolute;
+    bottom: 8vh;
+    left: 30%;
+  }
+  .headers {
+    position: absolute;
+    top: 15vh;
+    left: 7%;
+    max-width: 400px;
+  }
+}
+
+@media all and (min-width: 800px) and (max-width: 965px) {
+  #buttons-container {
+    text-align: center;
+    bottom: 5vh;
+    left: 30%;
+  }
+  .headers {
+    top: 15vh;
+    left: 7%;
+    max-width: 350px;
+  }
+  h1 {
+    font-size: 5.5rem !important;
+  }
+  p {
+    font-size: 1.35rem !important;
+  }
+}
+
+@media all and (min-width: 676px) and (max-width: 800px) {
+  #buttons-container {
+    text-align: center;
+    bottom: 8vh;
+    width: 60%;
+    left: 30%;
+  }
+  .headers {
+    top: 15vh;
+    left: 7%;
+    max-width: 250px;
+  }
+  h1 {
+    font-size: 4.5rem !important;
+  }
+  p {
+    font-size: 1.3rem !important;
+  }
+}
+
+@media all and (min-width: 551px) and (max-width: 675px) {
+  #buttons-container {
+    text-align: center;
+    bottom: 17vh;
+    left: 20%;
+    width: 70%;
+  }
+  #buttons-container .email-btn,
+  #buttons-container .resume-btn {
+    padding: 6px 22px !important;
+    font-size: 1.2rem !important;
+  }
+  .headers {
+    max-width: 300px;
+    top: 2vh !important;
+  }
+  h1 {
+    font-size: 4.5rem !important;
+  }
+  p {
+    font-size: 1.3rem !important;
+  }
+}
+
+@media all and (min-width: 420px) and (max-width: 550px) {
+  #buttons-container {
+    text-align: center;
+    bottom: 2vh;
+    left: 20%;
+    width: 70%;
+  }
+  #buttons-container .email-btn,
+  #buttons-container .resume-btn {
+    padding: 6px 18px !important;
+    font-size: 1.1rem !important;
+  }
+  .headers {
+    max-width: 360px;
+    top: 2vh !important;
+    left: 15%;
+  }
+  h1 {
+    font-size: 5rem !important;
+  }
+  p {
+    font-size: 1.4rem !important;
+  }
+}
+
+@media all and (min-width: 300px) and (max-width: 421px) {
+  #buttons-container {
+    text-align: center;
+    bottom: 6vh;
+    left: 12%;
+    width: 80%;
+  }
+  #buttons-container .email-btn,
+  #buttons-container .resume-btn {
+    padding: 6px 18px !important;
+    font-size: 1.1rem !important;
+  }
+  .headers {
+    max-width: 350px;
+    top: 2vh !important;
+    left: 12%;
+  }
+  h1 {
+    font-size: 4.5rem !important;
+  }
+  p {
+    font-size: 1.3rem !important;
+  }
+}
+
+@media all and (min-width: 250px) and (max-width: 370px) {
+  #buttons-container {
+    text-align: center;
+    bottom: 8vh;
+    left: 2%;
+    width: 95%;
+  }
+  #buttons-container .email-btn,
+  #buttons-container .resume-btn {
+    padding: 6px 16px !important;
+    font-size: 1.1rem !important;
+  }
+}
+/*# sourceMappingURL=styles.css.map */
