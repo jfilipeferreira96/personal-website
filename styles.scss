@@ -480,7 +480,7 @@ svg {
     font-size: 1.4rem !important;
   }
 }
-@media all and (min-width: 300px) and (max-width: 421px) {
+@media all and (min-width: 370px) and (max-width: 421px) {
   #buttons-container {
     text-align: center;
     bottom: 6vh;
@@ -505,16 +505,30 @@ svg {
     font-size: 1.3rem !important;
   }
 }
-@media all and (min-width: 250px) and (max-width: 370px) {
+
+@media screen and (max-width: 370px), screen and (max-height: 680px) {
   #buttons-container {
     text-align: center;
-    bottom: 8vh;
+    bottom: 1.5vh;
     left: 2%;
     width: 95%;
     .email-btn,
     .resume-btn {
-      padding: 6px 16px !important;
+      padding: 4px 14px !important;
       font-size: 1.1rem !important;
     }
+  }
+  .headers {
+    max-width: 300px;
+    top: 2vh !important;
+    left: 12%;
+  }
+  h1 {
+    font-size: 3.5rem !important;
+  }
+  p {
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+    font-size: 1.2rem !important;
   }
 }

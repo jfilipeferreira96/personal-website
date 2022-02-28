@@ -190,8 +190,10 @@ function reportWindowSize() {
    mySVG.setAttribute("viewBox", "-60 30 300 300");
   }else if(window.innerWidth < 550 && window.innerWidth > 421){
     mySVG.setAttribute("viewBox", "10 -20 250 250");
-  }else if(window.innerWidth < 421){
+  }else if(window.innerWidth < 421  && window.innerWidth > 370){
     mySVG.setAttribute("viewBox", "50 0 200 250");
+  }else if(window.innerWidth < 370){
+    mySVG.setAttribute("viewBox", "50 0 200 230");
   }
 }
 window.addEventListener('resize', reportWindowSize);
@@ -249,7 +251,6 @@ if (currentTheme) {
 
 // Check Local Storage For Sound On/off
 const soundOnOff = localStorage.getItem('sound');
-console.log(soundOnOff);
 if (soundOnOff) {
   document.documentElement.setAttribute('sound', soundOnOff);
 
