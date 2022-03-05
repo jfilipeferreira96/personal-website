@@ -59,14 +59,36 @@ let tl2 = gsap.timeline({delay:0.3});
 let wasResumePressed = 0;
 
 //Animação Inicial
-tl.from('#base_chao', { duration: 0.9, ease: "bounce.out", opacity:0, y:-100});
-tl.from('#secretaria', { duration: 0.6, ease: "elastic.out(0.5, 0.3)", opacity:0, y:-100});
-tl.from('#corpo', { duration: 0.7, ease: "power2. out", opacity:0});
-tl.from('#inv_screen', { duration: 0.4, ease: "power2. out", opacity:0});
-tl.to("#botao", 0.25,{ css: {x: -1, y: 0.9, opacity: 1, scale: 1.30, transformOrigin:"0% 100%, "}, ease:Power1.easeInOut});
-tl.to("#botao", 0.45,{ css: {x: 0, y: 0, rotation: 0, scale: 1, transformOrigin:"0% 100%" }, ease:Power1.easeInOut}); 
-tl.from(".headers,#buttons-container", { duration: 0.6, ease: "elastic.out(0.5, 0.3)", opacity:0, y:-50});
-TweenMax.to(".base", 3.5,  {display:'inline', opacity: 1});
+function loadingAnimation() {
+  tl.from('#base_chao', { duration: 0.9, ease: "bounce.out", opacity:0, y:-100});
+  tl.from('#secretaria', { duration: 0.6, ease: "elastic.out(0.5, 0.3)", opacity:0, y:-100});
+  tl.from('#corpo', { duration: 0.7, ease: "power2. out", opacity:0});
+  tl.from('#inv_screen', { duration: 0.4, ease: "power2. out", opacity:0});
+  tl.to("#botao", 0.25,{ css: {x: -1, y: 0.9, opacity: 1, scale: 1.30, transformOrigin:"0% 100%, "}, ease:Power1.easeInOut});
+  tl.to("#botao", 0.45,{ css: {x: 0, y: 0, rotation: 0, scale: 1, transformOrigin:"0% 100%" }, ease:Power1.easeInOut, onComplete: 
+    function(){gsap.fromTo("#wrapper", {opacity: 0}, {opacity: 1,  ease:Power1.easeInOut, duration: 2})} 
+  });
+  tl.from(".headers,#buttons-container", { duration: 0.6, ease: "elastic.out(0.5, 0.3)", opacity:0, y:-50});
+  TweenMax.to(".base", 3.5,  {display:'inline', opacity: 1});
+  setTimeout(infiniteLines, 4500);
+}
+
+//Infinite coding lines animation
+function infiniteLines (){
+  let clone = document.querySelector(".targets").cloneNode(true);
+  document.querySelector("#wrapper").appendChild(clone);
+  gsap.set(clone, { yPercent: -55, xPercent: -1.4 });
+  
+  gsap.to(".targets", {
+    duration: 5,
+    yPercent: "+=55",
+    xPercent: "+=1.4",
+    ease: "none",
+    repeat: -1
+  });
+}
+
+loadingAnimation();
 
 //Event Listeners
 resume.addEventListener('click', (e) =>{
@@ -153,7 +175,7 @@ email.addEventListener('click', (e) =>{
     ease: "power1.inOut"
   });
 
-  //esconder o aviao apos x segundos
+  //hiding the plane after x seconds
   TweenMax.to("#aviao_papel", 4.5, {display:"none", ease:Back.easeIn});
   
   setTimeout(resetEmailButton,3000);
@@ -191,7 +213,7 @@ function reportWindowSize() {
   }else if(window.innerWidth < 550 && window.innerWidth > 421){
     mySVG.setAttribute("viewBox", "10 -20 250 250");
   }else if(window.innerWidth < 421  && window.innerWidth > 370){
-    mySVG.setAttribute("viewBox", "50 0 200 250");
+    mySVG.setAttribute("viewBox", "50 -20 200 250");
   }else if(window.innerWidth < 370){
     mySVG.setAttribute("viewBox", "50 0 200 230");
   }
@@ -274,4 +296,3 @@ clicableSectionSound.addEventListener('click', (e) =>{
   }
   menu_settings.classList.toggle("open");
 });
-
