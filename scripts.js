@@ -123,8 +123,8 @@ resume.addEventListener('click', (e) =>{
   
 
   setTimeout(() => {
-    resetResumeButton
-    window.open('/resume/Curriculum_Vitae_Jose_Filipe_Ferreira.pdf')
+    resetResumeButton();
+    window.open('./resume/Curriculum_Vitae_Jose_Filipe_Ferreira.pdf');
   }, 4000);
   
 });
