@@ -189,7 +189,7 @@ email.addEventListener('click', (e) =>{
 });
 
 function resetEmailButton() {
-  window.location.href = "mailto:jfilipeferreira@ua.pt",
+  window.location.href = "mailto:filipeferreira96@hotmail.com",
   email.classList.remove('active'),
   resume.removeAttribute('disabled'),
   email.removeAttribute('disabled')
