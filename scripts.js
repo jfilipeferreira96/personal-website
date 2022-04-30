@@ -124,7 +124,12 @@ resume.addEventListener('click', (e) =>{
 
   setTimeout(() => {
     resetResumeButton();
-    window.open('https://jfilipeferreira96.github.io/personal-website/resume/Curriculum_Vitae_Jose_Filipe_Ferreira.pdf');
+    let userPreferedLan = window.navigator.language || navigator.userLanguage;
+    let urlCurriculum;
+
+    userPreferedLan === 'pt-PT' ? urlCurriculum = 'https://jfilipeferreira96.github.io/personal-website/resume/Curriculum_Vitae_Jose_Filipe_Ferreira.pdf' : 'https://jfilipeferreira96.github.io/personal-website/resume/Curriculum_Vitae_Jose_Filipe_Ferreira_EN.pdf'
+
+    window.open(urlCurriculum);
   }, 4000);
   
 });
